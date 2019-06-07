@@ -16,11 +16,21 @@ end
 
 configure do
 	init_db
+	#создаем таблицу
 	@db.execute 'CREATE TABLE if not exists Posts
 	(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	created_date DATE,
 	content TEXT
+	 )'
+
+	#создаем таблицу comments
+	@db.execute 'CREATE TABLE if not exists Comments
+	(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	created_date DATE,
+	content TEXT,
+	post_id INTEGER
 	 )'
 end
 
