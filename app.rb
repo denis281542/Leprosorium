@@ -49,5 +49,12 @@ post '/new' do
   #перенаправление на главную страницу
 
   redirect to '/'
-  erb "You typed: #{content}"
-end
+  end
+
+  #вывод информации о посте
+
+  get '/details/:id' do
+  		post_id = params[:post_id]
+
+  		erb "Displyng infomationfor post whit id #{post_id}"
+  end 
